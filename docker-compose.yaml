@@ -7,7 +7,7 @@ services:
   dockerapp:
       image: dhanshri1994/docker-app
       ports:
-        - 30000:30000
+        - 3000:3000:
   mongodb:
       image: mongo
       ports:
