@@ -5,7 +5,7 @@
     tasks:
 
       - name: Copy docker-compose
-        copy:
+        template:
           src: /root/Docker-App/docker-compose.yaml
           dest: /home/ec2-user/docker-compose.yaml
       - name: Run container
