@@ -9,9 +9,9 @@
           src: docker-compose.yaml
           dest: /home/ec2-user/docker-compose.yaml
       - name: Copy other files
-          template:
-            src: images/profile-1.jpg
-            dest: /home/app/images/profile-1.jpg
+        template:
+          src: images/profile-1.jpg
+          dest: /home/app/images/profile-1.jpg
       - name: Run container
         become_user: ec2-user
         shell:
