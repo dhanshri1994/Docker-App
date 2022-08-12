@@ -6,7 +6,7 @@
 
       - name: Copy docker-compose
         template:
-          src: /root/Docker-App/docker-compose.yaml
+          src: docker-compose.yaml
           dest: /home/ec2-user/docker-compose.yaml
       - name: Run container
         become_user: ec2-user
