@@ -79,5 +79,5 @@
       community.docker.docker_compose:
         project_src: /
         files:
-        - docker-compose.yml
+          - docker-compose.yml
       
