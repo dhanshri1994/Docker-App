@@ -4,9 +4,10 @@ ENV MONGO_DB_USERNAME=admin \
     MONGO_DB_PWD=password
 
 RUN mkdir -p /home/app
+RUN mkdir -p /home/app/images
 
 COPY ./app /home/app
-COPY ./images /home/app/
+COPY ./images /home/app/images
 # set default dir so that next commands executes in /home/app dir
 WORKDIR /home/app
 
