@@ -1,3 +1,10 @@
+-vars:
+  docker_apt_release_channel: stable
+  docker_apt_arch: amd64
+  docker_apt_repository: "deb [arch={{ docker_apt_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
+  docker_apt_gpg_key: https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg
+  docker_compose_version: "1.24.0"
+
 - name: Install packages using apt
   apt:
     name: 
@@ -11,13 +18,12 @@
 
 - name: Add Docker GPG apt Key
   apt_key:
-    url: "{{ https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg
-docker_compose_version: "1.24.0" }}"
+    url: "{{ docker_apt_gpg_key }}"
     state: present
 
 - name: Add Docker Repository
   apt_repository:
-    repo: "{{ deb [arch={{ docker_apt_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }} }}"
+    repo: "{{ docker_apt_repository }} }}"
     state: present
     update_cache: true
 
